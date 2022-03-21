@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.HomeActivity"
+    android:orientation="vertical"
+    android:background="#f2f2f2">
+
+    <include layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/search_back"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        >
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:id="@+id/search"
+            android:hint="请输入物料编码"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:background="@drawable/edit_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:text="筛选"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/goSearch"/>
+
+    </LinearLayout>
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/viewpagertab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:stl_defaultTabTextAllCaps="true"
+        app:stl_defaultTabTextColor="#000000"
+        app:stl_defaultTabTextSize="18sp"
+        app:stl_defaultTabTextHorizontalPadding="16dp"
+        app:stl_defaultTabTextMinWidth="100dp"
+        app:stl_distributeEvenly="true"
+        app:stl_indicatorWidth="auto"
+        app:stl_indicatorThickness="2dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+
+    </com.ogaclejapan.smarttablayout.SmartTabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager"
+        android:layout_below="@id/viewpagertab"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>
