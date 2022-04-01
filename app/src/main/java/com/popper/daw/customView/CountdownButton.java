@@ -35,6 +35,10 @@ public class CountdownButton extends Button implements View.OnClickListener{
      */
     private String afterText = "秒";
     /**
+     * 是否开始倒计时
+     */
+    public static boolean isStart=false;
+    /**
      * 按钮点击事件
      */
     private OnClickListener onClickListener;
@@ -120,6 +124,10 @@ public class CountdownButton extends Button implements View.OnClickListener{
         }
     }
 
+    public void setIsStart(boolean isStart){
+        this.isStart=isStart;
+    }
+
     /**
      * 点击按钮后的操作
      *
@@ -127,9 +135,12 @@ public class CountdownButton extends Button implements View.OnClickListener{
      */
     @Override
     public void onClick(View v) {
-        start();
+
         if (onClickListener != null) {
             onClickListener.onClick(v);
+        }
+        if (isStart){
+            start();
         }
     }
 

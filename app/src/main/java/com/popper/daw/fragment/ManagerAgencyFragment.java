@@ -1,21 +1,44 @@
 package com.popper.daw.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.blankj.utilcode.util.SPUtils;
 import com.popper.daw.R;
+import com.popper.daw.activity.LoginActivity;
+import com.popper.daw.activity.manager.ManagerAgencyDetailActivity;
 import com.popper.daw.adapter.ManagerAgencyAdapter;
 import com.popper.daw.bean.ManagerAgencyBean;
+import com.popper.daw.bean.ManagerItemBean;
+import com.popper.daw.bean.OrderBean;
+import com.popper.daw.bean.OrderListBean;
+import com.popper.daw.callback.ManagerDetailListener;
+import com.popper.daw.network.ApiServer;
+import com.popper.daw.network.BaseResponse;
+import com.popper.daw.network.RetrofitServiceManager;
+import com.popper.daw.network.RxSubcriber;
+import com.popper.daw.network.RxjavaHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 
 /**
@@ -23,7 +46,10 @@ import java.util.List;
  */
 public class ManagerAgencyFragment extends Fragment {
     private RecyclerView mView;
-    List<ManagerAgencyBean> list=new ArrayList<>();
+    private List<ManagerAgencyBean> list=new ArrayList<>();
+    private List<OrderListBean> mOrderListBeans=new ArrayList<>();
+    private List<ManagerItemBean> itemList=new ArrayList<>();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +68,15 @@ public class ManagerAgencyFragment extends Fragment {
 
     //初始化数据
     private void initData() {
-        list.add(new ManagerAgencyBean("测试","20210318","测是测试测试测试测试",0));
-        list.add(new ManagerAgencyBean("测试","20210318","测是测试测试测试测试",30));
-        list.add(new ManagerAgencyBean("测试","20210318","测是测试测试测试测试",40));
-        list.add(new ManagerAgencyBean("测试","20210318","测是测试测试测试测试",50));
-        list.add(new ManagerAgencyBean("测试","20210318","测是测试测试测试测试",100));
+        getOrderList(0);
+        list.add(new ManagerAgencyBean("测试","10000","测试","紧急","郑州"));
+        list.add(new ManagerAgencyBean("测试","10000","测试","紧急","郑州"));
+        list.add(new ManagerAgencyBean("测试","10000","测试","紧急","郑州"));
+        list.add(new ManagerAgencyBean("测试","10000","测试","紧急","郑州"));
+        list.add(new ManagerAgencyBean("测试","10000","测试","紧急","郑州"));
+        itemList.add(new ManagerItemBean("测试",20));
+        itemList.add(new ManagerItemBean("测试",20));
+        itemList.add(new ManagerItemBean("测试",20));
     }
 
     //初始化view
@@ -55,8 +85,36 @@ public class ManagerAgencyFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mView.setLayoutManager(linearLayoutManager);
+        //添加自定义分割线
+        DividerItemDecoration divider = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
+        divider.setDrawable(ContextCompat.getDrawable(getContext(),R.drawable.custom_divider));
+        mView.addItemDecoration(divider);
 
-        ManagerAgencyAdapter myAdapter = new ManagerAgencyAdapter(list,getContext());
+        ManagerAgencyAdapter myAdapter = new ManagerAgencyAdapter(mOrderListBeans,getContext(),itemList);
+        myAdapter.setOnItemClickListener(new ManagerDetailListener() {
+            @Override
+            public void onItemOnClick(View view) {
+                startActivity(new Intent(getActivity(), ManagerAgencyDetailActivity.class));
+            }
+        });
         mView.setAdapter(myAdapter);
+
     }
+
+    private void getOrderList(int state){
+        String token="Bearer "+SPUtils.getInstance("daw").getString("token");
+        RetrofitServiceManager.getInstance().creat(ApiServer.class)
+                .getOrderList(state,token)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new RxSubcriber<List<OrderListBean>>(getContext()) {
+                    @Override
+                    public void onSuccess(List<OrderListBean> orderListBeans) {
+                        Log.e("getOrderList", orderListBeans.toString());
+                        mOrderListBeans=orderListBeans;
+                    }
+                });
+    }
+
+
 }

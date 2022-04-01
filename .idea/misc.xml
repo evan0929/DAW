@@ -3,23 +3,58 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.28055555555555556" />
         <entry key="../../../../layout/custom_preview.xml" value="0.33645833333333336" />
+        <entry key="app/src/main/res/drawable/add_back.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/custom2_divider.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/custom_divider.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edit_back.xml" value="0.158" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/item_back.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/login_back.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/more_back.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/peif_back.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/save_back.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/search_back.xml" value="0.158" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_add_address.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_colorist.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_colorist_detail.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_director.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_edit_address.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_engineer.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_factory.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_manager_agency_detail.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_materials.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_track.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/address_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/color_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/director_item_layout.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/edit_back.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/factory_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_apply.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_coloriset_agency.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_coloriset_done.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_colorist.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_director_agency.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_director_done.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_manager_agency.xml" value="0.155622060709705" />
         <entry key="app/src/main/res/layout/fragment_manager_done.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/home_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/manager_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/order_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/progress_item_layou.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/remake_item_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/select_color_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/title2_layout.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/title_layout.xml" value="0.19628286491387126" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

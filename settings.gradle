@@ -10,6 +10,8 @@ pluginManagement {
             url "https://maven.google.com/"
         }
 
+
+
     }
 }
 dependencyResolutionManagement {

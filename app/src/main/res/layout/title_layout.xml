@@ -4,8 +4,7 @@
     android:layout_height="50dp"
     android:orientation="horizontal"
     android:background="@color/back"
-
-    android:layout_marginTop="40dp">
+    android:layout_marginTop="23dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,4 +23,13 @@
         android:layout_marginLeft="20dp"
         android:layout_centerVertical="true"
         android:id="@+id/goAccount"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/scan"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/scan"
+        android:visibility="gone"/>
 </RelativeLayout>

@@ -2,15 +2,17 @@ package com.popper.daw.bean;
 
 public class ManagerAgencyBean {
     private String jName;
-    private String time;
+    private String money;
     private String name;
-    private int progress;
+    private String level;
+    private String city;
 
-    public ManagerAgencyBean(String jName, String time, String name, int progress) {
+    public ManagerAgencyBean(String jName, String money, String name, String level, String city) {
         this.jName = jName;
-        this.time = time;
+        this.money = money;
         this.name = name;
-        this.progress = progress;
+        this.level = level;
+        this.city = city;
     }
 
     public String getjName() {
@@ -21,12 +23,12 @@ public class ManagerAgencyBean {
         this.jName = jName;
     }
 
-    public String getTime() {
-        return time;
+    public String getMoney() {
+        return money;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setMoney(String money) {
+        this.money = money;
     }
 
     public String getName() {
@@ -37,11 +39,19 @@ public class ManagerAgencyBean {
         this.name = name;
     }
 
-    public int getProgress() {
-        return progress;
+    public String getLevel() {
+        return level;
     }
 
-    public void setProgress(int progress) {
-        this.progress = progress;
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }
